@@ -1,0 +1,29 @@
+<html>
+	<head>
+	<script type="text/javascript">
+		function init()
+		{
+			laDiv1=document.createElement('div');
+			laDiv1.setAttribute('id','div1');
+			laDiv2=document.getElementById('div2');
+			laDiv1.setAttribute('style',"border-color:red; border-style: dotted; height: 50px;width: 50px");
+            laDiv1.innerHTML += 'Extra stuff';
+
+            laDiv2.appendChild(laDiv1); //on peut sélectionner un élément à partir de son nom de variable
+
+            laDiv2.innerHTML += 'MEGA stuff'; //ajouter du texte
+
+            var newPar = document.createElement("p");
+            var content = document.createTextNode("hello there")
+            newPar.appendChild(content);
+
+            
+
+
+		}
+	</script>
+	</head>  
+	<body onload='init()'>
+		<div id='div2' style="border-color:rgb(0, 38, 255); border-style: solid; height: 800px;width: 800px;"></div>
+	</body>
+</html>
