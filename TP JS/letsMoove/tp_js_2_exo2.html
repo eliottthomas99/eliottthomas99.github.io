@@ -11,11 +11,13 @@
             var ctxRouge ;
             var compteur;
             var alarm;
+
+            var p; //x de rouge
+            var q; //y de rouge
             function init() {
-
+                p=0;
+                q=0;
                
-
-
                 canvas = document.getElementById('tutoriel');
                 ctx = canvas.getContext('2d');
                 ctx.fillStyle = "#000000";
@@ -39,8 +41,17 @@
 
             function updateRect(){
                 
+
+                ctx.fillStyle = "#000000";
+                ctx.fillRect(p, q, 50, 50);
+                p+=10;
+                ctx.fillStyle = "#FF0000";
+                ctx.fillRect(p, q, 50, 50);
+                if(p>=550){
+                    clearInterval(alarm);
+                }
                 
-            clearInterval(alarm);
+            
                 
                 
                 
