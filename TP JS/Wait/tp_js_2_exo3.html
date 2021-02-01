@@ -14,10 +14,21 @@
 
             var p; //x de rouge
             var q; //y de rouge
+
+
+            function Attend(){
+                setTimeout(launchTime, 3000);
+            } 
+
+            function launchTime(){
+                alarm = setInterval(updateRect, 100);
+            }
+
+
             function init() {
                 p=0;
                 q=0;
-               
+                Attend()
                 canvas = document.getElementById('tutoriel');
                 ctx = canvas.getContext('2d');
                 ctx.fillStyle = "#000000";
@@ -34,7 +45,9 @@
 
                 div = document.getElementById('tutoriel');
                 compteur = 10;
-                alarm = setInterval(updateRect, 100);
+                
+
+
                 
             }
 
@@ -51,12 +64,7 @@
                     clearInterval(alarm);
                 }
                 
-            
-                
-                
-                
-                
-
+        
 
             }
 
