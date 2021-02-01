@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+        <meta charset="utf-8">
+		<script type="text/javascript">
+            
+            var canvas;
+            var ctx ;
+            var video;
+            function init() {
+                canvas = document.getElementById('tutoriel');
+                ctx = canvas.getContext('2d');
+            }
+            function MakeCircle(){
+
+                ctx.clearRect(0, 0, tutoriel.width, tutoriel.height);
+                video = document.getElementById("laVideo");
+                ctx.beginPath();
+		        ctx.arc(100,75,50,0,2*Math.PI*video.currentTime/video.duration,false);
+                //ctx.strokeStyle  = 'black'; //l'extérieur
+                ctx.stroke();
+                
+
+
+            }
+
+        </script>
+        
+	</head>
+	<body onload='init()'>
+        <canvas id="tutoriel" width="150" height="150"></canvas>
+        <br></br> 
+        <video id ="laVideo" src="html.mp4" width=960  height=720 controls autoplay ontimeupdate="MakeCircle()">
+            Cette vidéo ne peut être affichée sur votre navigateur Internet.<br>
+            Une version est disponible en téléchargement sous <a href="https://www.pexels.com/search/videos/html/">adresse du lien </a> . 
+          </video>
+
+    </body>
+</html>

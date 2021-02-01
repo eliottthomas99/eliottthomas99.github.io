@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+        <meta charset="utf-8">
+		<script type="text/javascript">
+            var canvas;
+            var canvasRouge;
+            var div;
+            var ctx ;
+            var ctxRouge ;
+            var compteur;
+            var alarm;
+            function init() {
+
+               
+
+
+                canvas = document.getElementById('tutoriel');
+                ctx = canvas.getContext('2d');
+                ctx.fillStyle = "#000000";
+                ctx.fillRect(0, 0, 600, 600);
+
+
+                canvasRouge = document.getElementById('rouge');
+                //ctx = canvasRouge.getContext('2d');
+                ctx.fillStyle = "#FF0000";
+                ctx.fillRect(0, 0, 50, 50);
+
+                canvas.appendChild(canvasRouge);
+
+
+                div = document.getElementById('tutoriel');
+                compteur = 10;
+                alarm = setInterval(updateRect, 100);
+                
+            }
+
+
+            function updateRect(){
+                
+                
+            clearInterval(alarm);
+                
+                
+                
+                
+
+
+            }
+
+        </script>
+        
+	</head>
+    <body onload='init()'>
+        <canvas id="tutoriel" width="600" height="600"></canvas>
+        <canvas id="rouge" width="50" height="50"></canvas>
+
+        <div id="content"></div>
+
+    </body>
+</html>
