@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+        <meta charset="utf-8">
+		<script type="text/javascript">
+
+           
+            var ctx;
+            
+
+            function Attend(carre){
+                setTimeout(launchTime(carre), 1000);
+            }
+
+            function launchTime(carre){
+                alarm = setInterval(carre.updateRect, 100);
+            }
+
+            // constructor function
+            function Carre (x,y,color,canvas) {
+                
+                this.canvas=canvas;
+	            this.canvas2dContext=this.canvas.getContext("2d");
+                
+                this.posx = x,
+                this.posy = y,
+                this.color=color
+
+                this.clear = function () {
+                    console.log("je suis clear");
+                    this.canvas2dContext.fillStyle = "#000000";
+                    this.canvas2dContext.fillRect(this.posx, this.posy, 50, 50);
+                }
+
+                this.update = function () {
+                    
+                    if(this.posx<=550){
+                        this.posx+=10;
+                        console.log("je passe ")
+                    }
+                    else{
+                        clearInterval(alarm);
+                        console.log("je suis stop")
+                    }
+                    console.log("je suis up");
+                }
+
+                this.draw = function () {
+                    
+                    this.canvas2dContext.fillStyle = "#FF0000";
+                    this.canvas2dContext.fillRect(this.posx, this.posy, 50, 50);
+                    //canvasGrand = document.getElementById('tutoriel');
+                    //canvasRouge = document.getElementById('rouge');
+                    //canvasGrand.appendChild(canvasRouge);
+                    console.log("je suis draw");
+                }
+                this.updateRect = function(){
+                    this.clear();
+                    this.update();
+                    this.draw();
+                }
+
+            }
+
+
+            
+
+            function init() {
+                
+
+                
+
+                canvas = document.getElementById('tutoriel');
+                ctx = canvas.getContext('2d');
+                ctx.fillStyle = "#000000";
+                ctx.fillRect(0, 0, 600, 600);
+
+
+                //canvasRouge = document.getElementById('rouge');
+
+                //canvas.appendChild(canvasRouge);
+
+                //console.log(canvasRouge)
+
+                //carre1 =  new Carre(0,0,"#FF0000",canvasRouge);
+                carre1 =  new Carre(0,0,"#FF0000",canvas);
+                ctx.fillStyle = "#FF0000";
+                ctx.fillRect(0, 0, 50, 50);
+
+                //ctx = canvas.getContext('2d');
+                
+                Attend(carre1);
+                
+                
+
+                
+
+                
+
+               
+                
+            }
+
+
+        </script>
+        
+	</head>
+    <body onload='init()'>
+        <canvas id="tutoriel" width="600" height="600"></canvas>
+        <canvas id="rouge" width="50" height="50"></canvas>
+
+        <div id="content"></div>
+
+    </body>
+</html>

@@ -35,12 +35,12 @@
                 ctx.fillRect(0, 0, 600, 600);
 
 
-                canvasRouge = document.getElementById('rouge');
+                //canvasRouge = document.getElementById('rouge');
                 //ctx = canvasRouge.getContext('2d');
                 ctx.fillStyle = "#FF0000";
                 ctx.fillRect(0, 0, 50, 50);
 
-                canvas.appendChild(canvasRouge);
+                //canvas.appendChild(canvasRouge);
 
 
                 div = document.getElementById('tutoriel');
@@ -59,7 +59,7 @@
                 ctx.fillRect(p, q, 50, 50);
                 p+=10;
                 ctx.fillStyle = "#FF0000";
-                ctx.fillRect(p, q, canvasRouge.width, canvasRouge.height);
+                ctx.fillRect(p, q, 50, 50);
                 if(p>=550){
                     clearInterval(alarm);
                 }
