@@ -7,7 +7,7 @@ html, body {
 
 html {
   font-size: 10px;
-  background-color: #a9a9a9;
+  background-color: #165a88;
 }
 
 body {
@@ -18,7 +18,7 @@ body {
 /* || typography */
 
 h1, h2, h3 {
-  font-family: 'Sonsie One', cursive;
+  font-family: "Goudy Bookletter 1911", sans-serif ;
   color: #2a2a2a;
 }
 
@@ -51,13 +51,13 @@ p, li {
 /* || header layout */
 
 nav, article, aside, footer {
-  background-color: white;
+  background-color: #77c4db;
   padding: 1%;
 }
 
 nav {
   height: 50px;
-  background-color: #ff80ff;
+  background-color: #50a3d3;
   display: flex;
   margin-bottom: 10px;
 }
@@ -121,7 +121,7 @@ article {
 aside {
   flex: 1;
   margin-left: 10px;
-  background-color: #ff80ff;
+  background-color:  #77c4db;
 }
 
 aside li {
