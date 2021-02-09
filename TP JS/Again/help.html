@@ -3,9 +3,10 @@
 <html>
 
 <head>
+
     <meta charset="utf-8">
     <title>Eliott THOMAS</title>
-    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="../../style.css">
     
     <!--script src="script.js"></script-->
     <script>
@@ -33,6 +34,13 @@
                 else {
                     (this.delay)--;
                 }
+
+
+                if (this.x + this.side >= canvas.width){
+                    this.velocity*=-1;
+                }
+
+
             }
 
             draw(){
@@ -81,9 +89,7 @@
             carre2.draw();
             carre3.draw();
 
-            if (carre3.x + carre3.side >= canvas.width){
-                clearInterval(drawSquareIntervId);
-            }
+            
         }
 
 
@@ -105,9 +111,9 @@
 
     <nav>
         <ul>
-            <li><a href="dynamique.html">Lien 1</a></li>
-            <li><a href="./quiSuisje.html">Qui suis-je ?</a></li>
-            <li><a href="/index.html">Acccueil</a></li>
+            <li><a href="../../dynamique.html">Lien 1</a></li>
+            <li><a href="../../quiSuisje.html">Qui suis-je ?</a></li>
+            <li><a href="../../index.html">Acccueil</a></li>
         </ul>
 
     </nav>
@@ -123,8 +129,8 @@
         <aside>
           <h2>Ressources</h2>
           <ul>
-            <li><a href="TP JS/Again/help.html">exemple 1</a></li>
-            <li><a href="./English_CV_Eliott_THOMAS.pdf">English CV</a></li>
+            <li><a href="../../TP JS/Again/help.html">exemple 1</a></li>
+            <li><a href="../../English_CV_Eliott_THOMAS.pdf">English CV</a></li>
             <li><a href="https://github.com/eliottthomas99">GITHUB</a></li>
             <li><a href="https://www.linkedin.com/in/eliott-thomas-a7b420193/">LINKEDIN</a></li>
             
