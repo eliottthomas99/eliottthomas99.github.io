@@ -14,12 +14,13 @@
         var ctx;
 
         class Carre {
-            constructor(x, y, side, color, velocity, delay){
+            constructor(x, y, side, color, velocityx,velocityy, delay){
                 this.x = x;
                 this.y = y;
                 this.side = side;
                 this.color = color;
-                this.velocity = velocity;
+                this.velocityx = velocityx;
+                this.velocityy = velocityy;
                 this.delay = delay;
             }
 
@@ -29,15 +30,29 @@
 
             update(){
                 if(this.delay <= 0){
-                    this.x += this.velocity;
+                    this.x += this.velocityx;
+                    this.y += this.velocityy;
                 }
                 else {
                     (this.delay)--;
                 }
 
-
                 if (this.x + this.side >= canvas.width){
-                    this.velocity*=-1;
+                    this.velocityx*=-1;
+                    this.velocityx+=Math.round(Math.random()) * 2 - 1; //add -1 or 1
+                }
+                else if (this.x <= 0){
+                    this.velocityx*=-1;
+                    this.velocityx+=Math.round(Math.random()) * 2 - 1; //add -1 or 1
+                }
+
+                if (this.y + this.side >= canvas.height){
+                    this.velocityy*=-1;
+                    this.velocityy+=Math.round(Math.random()) * 2 - 1; //add -1 or 1
+                }
+                else if (this.y <= 0){
+                    this.velocityy*=-1;
+                    this.velocityy+=Math.round(Math.random()) * 2 - 1; //add -1 or 1
                 }
 
 
@@ -52,9 +67,9 @@
 
         }
 
-        var carre1 = new Carre(-40, 275, 50, "red", 10, 0);
-        var carre2 = new Carre(-40, 275, 50, "yellow", 10, 10);
-        var carre3 = new Carre(-40, 275, 50, "blue", 10, 20);
+        var carre1 = new Carre(0, 275, 50, "red", 10,5, 0);
+        var carre2 = new Carre(0, 275, 50, "yellow", 10,5, 10);
+        var carre3 = new Carre(0, 275, 50, "black", 10,5, 20);
 
         var initSquareIntervId;
         var drawSquareIntervId;
@@ -66,7 +81,7 @@
             canvas = document.getElementById("canvas");
             ctx = canvas.getContext("2d");
             // delay 4000 ms
-            initSquareIntervId = setInterval(initDelay, 4000);
+            initSquareIntervId = setInterval(initDelay, 2000);
         }
 
         function initDelay(){
@@ -122,7 +137,7 @@
         <article>
           <h2>dynamique</h2>
 
-          <canvas id="canvas" width="600" height="600"></canvas>
+          <canvas id="canvas" width="800" height="600"></canvas>
           
         </article>
   
