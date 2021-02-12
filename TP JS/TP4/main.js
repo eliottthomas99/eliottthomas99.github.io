@@ -45,7 +45,7 @@ if (window.Worker) {
 		console.log('Message received from worker');
 
 
-        point1 = new Point(20*i,20*j,canvas);
+        point1 = new Point(coorX,coorY,canvas);
 		point1.ache();
 	}
 } else {
