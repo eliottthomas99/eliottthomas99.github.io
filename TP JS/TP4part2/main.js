@@ -44,51 +44,55 @@ if (window.Worker) {
         let num = Math.random();
         if (num < 0.5) {
             let whichWorker = Math.random();
-            switch (whichWorker) {
-                case whichWorker < 0.1:
-                    myWorker1.postMessage("go");
-                    console.log("worker1 send");
-                    break;
-                case whichWorker < 0.2:
-                    myWorker2.postMessage("go");
-                    console.log("worker2 send")
-                    break;
-                case whichWorker < 0.3:
-                    myWorker3.postMessage("go");
-                    console.log("worker3 send");
-                    break;
-                case whichWorker < 0.4:
-                    myWorker4.postMessage("go");
-                    console.log("worker4 send")
-                    break;
-                case whichWorker < 0.5:
-                    myWorker5.postMessage("go");
-                    console.log("worker5 send");
-                    break;
-                case whichWorker < 0.6:
-                    myWorker6.postMessage("go");
-                    console.log("worker6 send");
-                    break;
-                case whichWorker < 0.7:
-                    myWorker7.postMessage("go");
-                    console.log("worker7 send");
-                    break;
-                case whichWorker < 0.8:
-                    myWorker8.postMessage("go");
-                    console.log("worker8 send");
-                    break;
-                case whichWorker < 0.9:
-                    myWorker9.postMessage("go");
-                    console.log("worker9 send");
-                    break;
-                case whichWorker < 1:
-                    myWorker10.postMessage("go");
-                    console.log("worker10 send");
-                    break;
+
+            if (0 <= whichWorker < 0.1){
+                myWorker1.postMessage("go");
+                console.log("worker1 send");
+            }
+            else if(0.1 <= whichWorker < 0.2){
+                myWorker2.postMessage("go");
+                console.log("worker2 send");
+            }   
+
+            else if(0.2 <= whichWorker < 0.3){
+                myWorker3.postMessage("go");
+                console.log("worker3 send");
+            }
+            else if(0.3 <= whichWorker < 0.4){
+                myWorker4.postMessage("go");
+                console.log("worker4 send");
+            }
+            else if(0.4 <= whichWorker < 0.5){
+                myWorker5.postMessage("go");
+                console.log("worker5 send");
+            }
+            else if(0.5 <= whichWorker < 0.6){
+                myWorker6.postMessage("go");
+                console.log("worker6 send");
+            }
+            else if(0.6 <= whichWorker < 0.7){
+                myWorker7.postMessage("go");
+                console.log("worker7 send");
+            }
+            else if(0.7 <= whichWorker < 0.8){
+                myWorker8.postMessage("go");
+                console.log("worker8 send");
+            }
+            else if(0.8 <= whichWorker < 0.9){
+                myWorker9.postMessage("go");
+                console.log("worker9 send");
+            }
+            else if(0.9 <= whichWorker <= 1){
+                myWorker10.postMessage("go");
+                console.log("worker10 send");
+            }
+            
+            
+            
 
             }
 
-        }
+        
     }
 
 
