@@ -47,33 +47,43 @@ if (window.Worker) {
             switch (whichWorker) {
                 case whichWorker < 0.1:
                     myWorker1.postMessage("go");
+                    console.log("worker1 send");
                     break;
                 case whichWorker < 0.2:
-                    myWorker1.postMessage("go");
+                    myWorker2.postMessage("go");
+                    console.log("worker2 send")
                     break;
                 case whichWorker < 0.3:
-                    myWorker1.postMessage("go");
+                    myWorker3.postMessage("go");
+                    console.log("worker3 send");
                     break;
                 case whichWorker < 0.4:
-                    myWorker1.postMessage("go");
+                    myWorker4.postMessage("go");
+                    console.log("worker4 send")
                     break;
                 case whichWorker < 0.5:
-                    myWorker1.postMessage("go");
+                    myWorker5.postMessage("go");
+                    console.log("worker5 send");
                     break;
                 case whichWorker < 0.6:
-                    myWorker1.postMessage("go");
+                    myWorker6.postMessage("go");
+                    console.log("worker6 send");
                     break;
                 case whichWorker < 0.7:
-                    myWorker1.postMessage("go");
+                    myWorker7.postMessage("go");
+                    console.log("worker7 send");
                     break;
                 case whichWorker < 0.8:
-                    myWorker1.postMessage("go");
+                    myWorker8.postMessage("go");
+                    console.log("worker8 send");
                     break;
                 case whichWorker < 0.9:
-                    myWorker1.postMessage("go");
+                    myWorker9.postMessage("go");
+                    console.log("worker9 send");
                     break;
                 case whichWorker < 1:
-                    myWorker1.postMessage("go");
+                    myWorker10.postMessage("go");
+                    console.log("worker10 send");
                     break;
 
             }
@@ -86,7 +96,7 @@ if (window.Worker) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
-        console.log('Message received from worker');
+        console.log('Message received from worker1');
 
 
         point1 = new Point(coorX, coorY, canvas,color);
@@ -96,7 +106,7 @@ if (window.Worker) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
-        console.log('Message received from worker');
+        console.log('Message received from worker2');
 
 
         point1 = new Point(coorX, coorY, canvas,color);
@@ -106,7 +116,7 @@ if (window.Worker) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
-        console.log('Message received from worker');
+        console.log('Message received from worker3');
 
 
         point1 = new Point(coorX, coorY, canvas,color);
@@ -116,7 +126,7 @@ if (window.Worker) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
-        console.log('Message received from worker');
+        console.log('Message received from worker4');
 
 
         point1 = new Point(coorX, coorY, canvas,color);
@@ -126,7 +136,7 @@ if (window.Worker) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
-        console.log('Message received from worker');
+        console.log('Message received from worker5');
 
 
         point1 = new Point(coorX, coorY, canvas,color);
@@ -136,7 +146,7 @@ if (window.Worker) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
-        console.log('Message received from worker');
+        console.log('Message received from worker6');
 
 
         point1 = new Point(coorX, coorY, canvas,color);
@@ -146,7 +156,7 @@ if (window.Worker) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
-        console.log('Message received from worker');
+        console.log('Message received from worker7');
 
 
         point1 = new Point(coorX, coorY, canvas,color);
@@ -156,7 +166,7 @@ if (window.Worker) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
-        console.log('Message received from worker');
+        console.log('Message received from worker8');
 
 
         point1 = new Point(coorX, coorY, canvas,color);
@@ -166,7 +176,7 @@ if (window.Worker) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
-        console.log('Message received from worker');
+        console.log('Message received from worker9');
 
 
         point1 = new Point(coorX, coorY, canvas,color);
@@ -176,7 +186,7 @@ if (window.Worker) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
-        console.log('Message received from worker');
+        console.log('Message received from worker10');
 
 
         point1 = new Point(coorX, coorY, canvas,color);
