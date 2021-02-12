@@ -19,16 +19,17 @@ if (window.Worker) {
     canvas = document.getElementById('myCanvas');
 
     class Point {
-        constructor(x, y, canvas,color) {
+        constructor(x, y, canvas,color,taille) {
             this.canvas = canvas;
             this.canvas2dContext = this.canvas.getContext("2d");
             this.x = x;
             this.y = y;
+            this.taille = taille;
 
             this.ache = function () {
 
                 this.canvas2dContext.beginPath();
-                this.canvas2dContext.arc(this.x, this.y, 10, 0, 2 * Math.PI, false);
+                this.canvas2dContext.arc(this.x, this.y, this.taille, 0, 2 * Math.PI, false);
                 this.canvas2dContext.strokeStyle = 'black'; //l'extérieur
                 this.canvas2dContext.stroke();
                 this.canvas2dContext.fillStyle = color; //l'intérieur
@@ -100,100 +101,110 @@ if (window.Worker) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
+        var taille = e.data[3];
         console.log('Message received from worker1');
 
 
-        point1 = new Point(coorX, coorY, canvas,color);
+        point1 = new Point(coorX, coorY, canvas,color,taille);
         point1.ache();
     }
     myWorker2.onmessage = function (e) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
+        var taille = e.data[3];
         console.log('Message received from worker2');
 
 
-        point1 = new Point(coorX, coorY, canvas,color);
+        point1 = new Point(coorX, coorY, canvas,color,taille);
         point1.ache();
     }
     myWorker3.onmessage = function (e) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
+        var taille = e.data[3];
         console.log('Message received from worker3');
 
 
-        point1 = new Point(coorX, coorY, canvas,color);
+        point1 = new Point(coorX, coorY, canvas,color,taille);
         point1.ache();
     }
     myWorker4.onmessage = function (e) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
+        var taille = e.data[3];
         console.log('Message received from worker4');
 
 
-        point1 = new Point(coorX, coorY, canvas,color);
+        point1 = new Point(coorX, coorY, canvas,color,taille);
         point1.ache();
     }
     myWorker5.onmessage = function (e) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
+        var taille = e.data[3];
         console.log('Message received from worker5');
 
 
-        point1 = new Point(coorX, coorY, canvas,color);
+        point1 = new Point(coorX, coorY, canvas,color,taille);
         point1.ache();
     }
     myWorker6.onmessage = function (e) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
+        var taille = e.data[3];
         console.log('Message received from worker6');
 
 
-        point1 = new Point(coorX, coorY, canvas,color);
+        point1 = new Point(coorX, coorY, canvas,color,taille);
         point1.ache();
     }
     myWorker7.onmessage = function (e) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
+        var taille = e.data[3];
         console.log('Message received from worker7');
 
 
-        point1 = new Point(coorX, coorY, canvas,color);
+        point1 = new Point(coorX, coorY, canvas,color,taille);
         point1.ache();
     }
     myWorker8.onmessage = function (e) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
+        var taille = e.data[3];
         console.log('Message received from worker8');
 
 
-        point1 = new Point(coorX, coorY, canvas,color);
+        point1 = new Point(coorX, coorY, canvas,color,taille);
         point1.ache();
     }
     myWorker9.onmessage = function (e) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
+        var taille = e.data[3];
         console.log('Message received from worker9');
 
 
-        point1 = new Point(coorX, coorY, canvas,color);
+        point1 = new Point(coorX, coorY, canvas,color,taille);
         point1.ache();
     }
     myWorker10.onmessage = function (e) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
+        var taille = e.data[3];
         console.log('Message received from worker10');
 
 
-        point1 = new Point(coorX, coorY, canvas,color);
+        point1 = new Point(coorX, coorY, canvas,color,taille);
         point1.ache();
     }
 
