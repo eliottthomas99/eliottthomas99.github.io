@@ -82,7 +82,7 @@ if (window.Worker) {
     }
 
 
-    myWorker.onmessage = function (e) {
+    myWorker1.onmessage = function (e) {
         var coorX = e.data[0];
         var coorY = e.data[1];
         var color = e.data[2]; 
@@ -92,6 +92,101 @@ if (window.Worker) {
         point1 = new Point(coorX, coorY, canvas,color);
         point1.ache();
     }
+    myWorker2.onmessage = function (e) {
+        var coorX = e.data[0];
+        var coorY = e.data[1];
+        var color = e.data[2]; 
+        console.log('Message received from worker');
+
+
+        point1 = new Point(coorX, coorY, canvas,color);
+        point1.ache();
+    }
+    myWorker3.onmessage = function (e) {
+        var coorX = e.data[0];
+        var coorY = e.data[1];
+        var color = e.data[2]; 
+        console.log('Message received from worker');
+
+
+        point1 = new Point(coorX, coorY, canvas,color);
+        point1.ache();
+    }
+    myWorker4.onmessage = function (e) {
+        var coorX = e.data[0];
+        var coorY = e.data[1];
+        var color = e.data[2]; 
+        console.log('Message received from worker');
+
+
+        point1 = new Point(coorX, coorY, canvas,color);
+        point1.ache();
+    }
+    myWorker5.onmessage = function (e) {
+        var coorX = e.data[0];
+        var coorY = e.data[1];
+        var color = e.data[2]; 
+        console.log('Message received from worker');
+
+
+        point1 = new Point(coorX, coorY, canvas,color);
+        point1.ache();
+    }
+    myWorker6.onmessage = function (e) {
+        var coorX = e.data[0];
+        var coorY = e.data[1];
+        var color = e.data[2]; 
+        console.log('Message received from worker');
+
+
+        point1 = new Point(coorX, coorY, canvas,color);
+        point1.ache();
+    }
+    myWorker7.onmessage = function (e) {
+        var coorX = e.data[0];
+        var coorY = e.data[1];
+        var color = e.data[2]; 
+        console.log('Message received from worker');
+
+
+        point1 = new Point(coorX, coorY, canvas,color);
+        point1.ache();
+    }
+    myWorker8.onmessage = function (e) {
+        var coorX = e.data[0];
+        var coorY = e.data[1];
+        var color = e.data[2]; 
+        console.log('Message received from worker');
+
+
+        point1 = new Point(coorX, coorY, canvas,color);
+        point1.ache();
+    }
+    myWorker9.onmessage = function (e) {
+        var coorX = e.data[0];
+        var coorY = e.data[1];
+        var color = e.data[2]; 
+        console.log('Message received from worker');
+
+
+        point1 = new Point(coorX, coorY, canvas,color);
+        point1.ache();
+    }
+    myWorker10.onmessage = function (e) {
+        var coorX = e.data[0];
+        var coorY = e.data[1];
+        var color = e.data[2]; 
+        console.log('Message received from worker');
+
+
+        point1 = new Point(coorX, coorY, canvas,color);
+        point1.ache();
+    }
+
+
+
+
+
 } else {
     console.log('Your browser doesn\'t support web workers.')
 }
