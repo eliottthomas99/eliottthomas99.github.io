@@ -29,44 +29,62 @@
         }
 
 
+        /*
+        function fetchRequest() {
+            fetch("https://stwom.herokuapp.com/600")
+                .then(response => response.json())
+                .then(response => alert(JSON.stringify(response)))
+                .catch(error => alert("Erreur : " + error));
+        }*/
 
 
         function MakeCircles() {
 
-            
+
             var client = new HttpClient();
 
-            
-                link = 'https://stwom.herokuapp.com/600';+integer.toString();
 
-                client.get(link, function (response) {
+            link = 'https://stwom.herokuapp.com/600'; +integer.toString();
+
+
+            /*
+            client.get(link, function (response) {
                 console.log(response)
 
-                var data = JSON.parse(response)
+                var data = JSON.parse(response) // on convertit la réponse depuis une string vers un json
 
 
 
 
                 console.log(data.x)
-                coorX=data.x;
+                coorX = data.x;
                 console.log(coorX);
-                coorY=data.y;
+                coorY = data.y;
             });
+            */
+            fetch("https://stwom.herokuapp.com/600")
+                .then(response => response.json())
+                .then(response => {
+                    coorX = response.x;
+                    coorY = response.y
+                })
+                .catch(error => alert("Erreur : " + error));
 
-
-            integer+=1;
+            integer += 1;
 
 
 
             canvas = document.getElementById('tutoriel');
-            ctx=canvas.getContext("2d");
-            
+            ctx = canvas.getContext("2d");
+
             ctx.beginPath();
             ctx.arc(coorX, coorY, 5, 0, 2 * Math.PI, false);
-            //ctx.strokeStyle  = 'black'; //l'extérieur
+            ctx.strokeStyle = 'black'; //l'extérieur
             ctx.stroke();
+            ctx.fillStyle = 'yellow'; //l'extérieur
+            ctx.fill();
 
-            if(integer>10){
+            if (integer > 10) {
                 clearInterval(alarm);
             }
 
@@ -76,9 +94,9 @@
         function init() {
 
             alarm = setInterval(MakeCircles, 1000);
-            
-            
-            
+
+
+
 
 
 
