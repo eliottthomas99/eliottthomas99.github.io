@@ -7,6 +7,10 @@
  //import defaultExport from "../../../node_modules/ical.js/lib/ical";
 
 
+var ICAL = require("ical.js");  
+
+
+
 var iCalendarData = [
     'BEGIN:VCALENDAR',
     'CALSCALE:GREGORIAN',
