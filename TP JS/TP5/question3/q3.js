@@ -3,12 +3,12 @@
  */
 
 
- import defaultExport from "ical.js/lib/ical";
+ //import defaultExport from "ical.js/lib/ical";
  //import defaultExport from "../../../node_modules/ical.js/lib/ical";
 
 
-var ICAL = require("ical.js");  
-
+//var ICAL = require("ical.js");  
+var ICAL = import("ical.js");  
 
 
 var iCalendarData = [
