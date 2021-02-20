@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emploi du temps</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://unpkg.com/ical.js"></script>
+    <script src="index.js" defer></script>
+    <pre id="console"></pre>
+  </head>
+  <body>
+    <header>
+      <h1>Emploi du temps</h1>
+    </header>
+
+    <main>
+      <section class="note-display">
+        <h2>Emploi du temps :</h2>
+        <ul>
+
+        </ul>
+      </section>
+
+      <form>
+        <div class="remember">
+          <label for="entername">URL emploi du temps :</label>
+          <input id="entername" type="text" required>
+          <input id="submitname" type="submit" value="Say hello">
+        </div>
+        <div class="forget">
+          <label for="forgetname">Oublier l'URL</label>
+          <input id="forgetname" type="reset" value="Forget">
+        </div>
+      </form>
+
+      <p class="personal-greeting"></p>
+
+      <section class="new-note">
+        <h2>Enter a new note</h2>
+        <form>
+          <div>
+            <label for="title">Note title</label>
+            <input id="title" type="text" required>
+          </div>
+          <div>
+            <label for="body">Note text</label>
+            <input id="body" type="text" required>
+          </div>
+          <div>
+            <button>Create new note</button>
+          </div>
+        </form>
+      </section>
+
+
+
+    </main>
+  </body>
+</html>
