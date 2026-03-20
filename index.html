@@ -250,6 +250,111 @@
       margin-left: 0.4rem;
     }
 
+    /* ===== Table demo ===== */
+    .demo-wrap {
+      margin: 2rem 0 1.75rem;
+    }
+
+    .demo-caption {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .demo-table-wrap {
+      display: inline-block;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .demo-table {
+      border-collapse: collapse;
+      font-size: 0.8rem;
+    }
+
+    .demo-table th {
+      background: var(--bg-alt);
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      padding: 0.4rem 0.9rem;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      text-align: left;
+    }
+    .demo-table th:last-child { border-right: none; }
+
+    .demo-table td {
+      padding: 0.38rem 0.9rem;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      cursor: default;
+      transition: background 0.12s;
+      white-space: nowrap;
+    }
+    .demo-table td:last-child { border-right: none; }
+    .demo-table tr:last-child td { border-bottom: none; }
+
+    .demo-table td:hover {
+      background: var(--accent-soft);
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+      z-index: 1;
+    }
+
+    .demo-table td:hover::after {
+      content: "cell";
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      background: var(--accent);
+      color: #fff;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.55rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.1rem 0.3rem;
+      border-radius: 0 0 0 3px;
+      pointer-events: none;
+    }
+
+    .demo-table td.extracted {
+      background: #e8f5e9;
+      color: #2e7d32;
+      text-decoration: line-through;
+      text-decoration-color: #a5d6a7;
+    }
+
+    .demo-table td.extracted::after {
+      content: "✓";
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      background: #2e7d32;
+      color: #fff;
+      font-size: 0.6rem;
+      padding: 0.1rem 0.3rem;
+      border-radius: 0 0 0 3px;
+      pointer-events: none;
+    }
+
+    .demo-status {
+      margin-top: 0.5rem;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      min-height: 1.1em;
+      transition: color 0.2s;
+    }
+
+    .demo-status.active { color: var(--accent); }
+
     /* ===== Footer ===== */
     footer {
       border-top: 1px solid var(--border);
@@ -294,6 +399,38 @@
       honest about what actually has to work in production. I'm increasingly drawn to the
       question of how AI can be deployed responsibly and with genuine societal value.
     </p>
+    <div class="demo-wrap">
+      <p class="demo-caption">// table extraction, basically</p>
+      <div class="demo-table-wrap">
+        <table class="demo-table" id="demoTable">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Qty</th>
+              <th>Unit price</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Consulting services</td><td>3</td><td>850 €</td><td>2 550 €</td>
+            </tr>
+            <tr>
+              <td>Software licence</td><td>1</td><td>1 200 €</td><td>1 200 €</td>
+            </tr>
+            <tr>
+              <td>Support &amp; maintenance</td><td>5</td><td>120 €</td><td>600 €</td>
+            </tr>
+            <tr>
+              <td colspan="3" style="text-align:right; font-weight:600; color:var(--text-muted); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em;">Total</td>
+              <td style="font-weight:600;">4 350 €</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="demo-status" id="demoStatus">hover to detect &middot; click to extract</p>
+    </div>
+
     <div class="contact-row">
       <a href="mailto:eliott.thomas99@protonmail.com">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -434,5 +571,33 @@
   </div>
 </footer>
 
+<script>
+  (function () {
+    const table  = document.getElementById('demoTable');
+    const status = document.getElementById('demoStatus');
+    let extracted = 0;
+    const total = table.querySelectorAll('tbody td:not([colspan])').length;
+
+    table.querySelectorAll('tbody td:not([colspan])').forEach(function (td) {
+      td.addEventListener('click', function () {
+        if (td.classList.contains('extracted')) return;
+        td.classList.add('extracted');
+        extracted++;
+        status.textContent = extracted + ' / ' + total + ' cells extracted';
+        status.classList.add('active');
+        if (extracted === total) {
+          setTimeout(function () {
+            table.querySelectorAll('tbody td.extracted').forEach(function (c) {
+              c.classList.remove('extracted');
+            });
+            extracted = 0;
+            status.textContent = 'hover to detect \u00b7 click to extract';
+            status.classList.remove('active');
+          }, 1800);
+        }
+      });
+    });
+  })();
+</script>
 </body>
 </html>
